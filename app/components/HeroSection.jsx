@@ -50,7 +50,7 @@ const HeroSection = () => {
       <div className="col-span-5 place-self-center mt-8 lg:mt-8">
   <div className="bg-[#181818] lg:w-[400px] lg:h-[400px] w-[250px] h-[250px] flex justify-center items-center relative overflow-hidden">
     <Image
-      src="/images/hero.jpg"
+      src="/images/hero.png"
       alt="hero image"
       className="object-contain w-full h-full" // Adjusted classes here
       width={300}
