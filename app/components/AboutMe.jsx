@@ -1,18 +1,99 @@
-import React from 'react'
-import Image from 'next/image'
+'use client';
+import React, {useTransition, useState} from 'react'
+import Image from 'next/image';
+import AboutMeTabs from './AboutMeTabs';
+
+const TAB_DATA = [
+  {
+    title: "Skills",
+    id: "skills",
+    content: (
+      <div>
+  
+        <ul className="list-disc pl-4 space-y-2"> {/* Add space between list items */}
+          <li>TypeScript</li>
+          <li>JavaScript</li>
+          <li>C#</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SQL</li>
+          <li>React</li>
+          <li>Express.js</li>
+        </ul>
+      </div>
+    ),
+  },
+  
+  {
+    title: "Education",
+    id: "education",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>MongoDB</li>
+        <li>PostgreSQL </li>
+        <li>AWS </li>
+        <li>MUI </li>
+        <li>Web sockets </li>
+        <li>Bootstrap </li>
+
+      </ul>
+    ),
+  },
+  {
+    title: "Certifications",
+    id: "certifications",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>AWS Cloud Practitioner</li>
+        <li>Google Professional Cloud Developer</li>
+      </ul>
+    ),
+  },
+];
 
 function AboutMe() {
+
+  const [tab, setTab] = useState('skills');
+  const [ispending, startTransition] = useTransition();
+
+  const handleTabChange = (id) => {
+    startTransition(() => {
+      setTab(id);
+    });
+  };
   return (
-    <section className='text-white'>
-      <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
-        <Image src="/images/aboutme.png" width={400} height={400} alt="aboutme" />
-        <div>
-          <h2>About me</h2>
-          <p>As a seasoned Full-Stack Software Developer with a diverse background that spans finance, education, and healthcare, I bring a unique perspective to the tech industry.<br></br> <br></br> My journey in the tech world is fueled by a desire to develop solutions that make a difference, backed by a solid foundation in both front-end and back-end development, and a commitment to delivering exceptional digital experiences. <br></br><br></br>Launching SuperQuiz as its founder, I've refined my leadership and innovation capabilities, specializing in the creation of engaging, AI-assisted quizzes tailored to enhance educational experiences. This experience has sharpened my skills in product development, enabling me to intuitively align software functionalities with customer needs, and to deliver personalized solutions that resonate with users. My role has also expanded my expertise in SaaS platforms, where I've embraced the dynamic process of bringing a product to market, continually iterating based on user feedback to fine-tune features and user interface for optimal engagement and customer satisfaction.</p>
+    <section className="text-white">
+    <div className="gap-8 items-center py-8 px-4 xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-16">
+      <Image src="/images/aboutme.png" width={500} height={500} />
+      <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <p className="text-white texxt-base md:text-lg">As a seasoned Full-Stack Software Developer with a diverse background that spans finance, education, and healthcare, I bring a unique perspective to the tech industry.<br></br>  My journey in the tech world is fueled by a desire to develop solutions that make a difference, backed by a solid foundation in both front-end and back-end development, and a commitment to delivering exceptional digital experiences. <br></br>Launching SuperQuiz as its founder, I've refined my leadership and innovation capabilities, specializing in the creation of engaging, AI-assisted quizzes tailored to enhance educational experiences. This experience has sharpened my skills in product development, enabling me to intuitively align software functionalities with customer needs, and to deliver personalized solutions that resonate with users. My role has also expanded my expertise in SaaS platforms, where I've embraced the dynamic process of bringing a product to market, continually iterating based on user feedback to fine-tune features and user interface for optimal engagement and customer satisfaction.</p>
+          <div className="flex flex-row justify-start mt-8 space-x-4">
+            <AboutMeTabs
+              selectTab={() => handleTabChange("skills")}
+              active={tab === "skills"}
+            >
+              Languages and Frameworks
+            </AboutMeTabs>
+            <AboutMeTabs
+              selectTab={() => handleTabChange("education")}
+              active={tab === "education"}
+            >
+              Tools and Skills
+            </AboutMeTabs>
+            <AboutMeTabs
+              selectTab={() => handleTabChange("certifications")}
+              active={tab === "certifications"}
+            >
+              Education
+            </AboutMeTabs>
+          </div>
+          <div className="mt-8">
+            {TAB_DATA.find((t) => t.id === tab).content}
+          </div>
         </div>
       </div>
     </section>
-  )
-}
-
+  );
+};
 export default AboutMe
