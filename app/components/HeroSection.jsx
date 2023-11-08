@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-12 my-4">
       <div className="col-span-7 place-self-center place-items-center grid lg:place-items-start">
-      <h1 className="max-w-2xl mb-4 lg:text-6xl text-4xl font-extrabold text-white">
+      <h1 className="whitespace-nowrap max-w-2xl mb-4 lg:text-6xl text-4xl font-extrabold text-white">
       <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-lime-500 lg:text-6xl text-4xl">
             Hello, I am {" "}
           </span>
@@ -30,10 +30,10 @@ const HeroSection = () => {
     />
         
         </h1>
-        <p className="text-[#ADB7BE] mb-6 textl-lg lg:text-xl">
+        {/* <p className="text-[#ADB7BE] mb-6 textl-lg lg:text-xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
           voluptatum.
-        </p>
+        </p> */}
         <div>
   <button className="bg-gradient-to-br from-cyan-500 to-lime-500 hover:bg-gray-300 text-charcoal px-6 py-3 rounded-full mr-4 shadow-lg transition duration-150 ease-in-out">
     Hire Me
@@ -47,17 +47,16 @@ const HeroSection = () => {
 
 
       </div>
-      <div className="col-span-5 place-self-center mt-8 lg:mt-8">
-  <div className="bg-[#181818] lg:w-[400px] lg:h-[400px] w-[250px] h-[250px] flex justify-center items-center relative overflow-hidden">
-    <Image
+      {/* <div className="col-span-5 place-self-center mt-8 lg:mt-8">
+  <div className="bg-[#181818] lg:w-[400px] lg:h-[400px] w-[250px] h-[250px] flex justify-center items-center relative overflow-hidden"> */}
+    {/* <Image
       src="/images/hero.png"
       alt="hero image"
       className="object-contain w-full h-full" // Adjusted classes here
       width={300}
       height={300}
-    />
-  </div>
-</div>
+    /> */}
+  {/* </div> */}
 </section>
 
 
