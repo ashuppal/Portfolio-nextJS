@@ -79,25 +79,19 @@ function AboutMe() {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-white texxt-base md:text-lg">
-            As a seasoned Full-Stack Software Developer with a diverse
-            background that spans finance, education, and healthcare, I bring a
-            unique perspective to the tech industry.My journey in the
+           My journey in the
             tech world is fueled by a desire to develop solutions that make a
             difference, backed by a solid foundation in both front-end and
             back-end development, and a commitment to delivering exceptional
-            digital experiences. <br></br>Launching SuperQuiz as its founder,
+            digital experiences. <br></br>By launching SuperQuiz,
             I've refined my leadership and innovation capabilities, specializing
             in the creation of engaging, AI-assisted quizzes tailored to enhance
             educational experiences. This experience has sharpened my skills in
             product development, enabling me to intuitively align software
             functionalities with customer needs, and to deliver personalized
-            solutions that resonate with users. My role has also expanded my
-            expertise in SaaS platforms, where I've embraced the dynamic process
-            of bringing a product to market, continually iterating based on user
-            feedback to fine-tune features and user interface for optimal
-            engagement and customer satisfaction.
+            solutions that resonate with users. 
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="flex flex-row justify-center mt-8">
             <AboutMeTabs
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}

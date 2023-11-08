@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 const HeroSection = () => {
   return (
     <section className="relative grid grid-cols-1 lg:grid-cols-12 my-4">
-      <div className="col-span-7 place-self-center place-items-center grid lg:place-items-start">
+      <div className="col-span-7 grid lg:place-items-start">
         {/* Content container with padding at the bottom to push up the text */}
         <div className="pb-20"> {/* Adjust the padding value as needed */}
           <h1 className="whitespace-nowrap max-w-2xl mb-4 lg:text-6xl text-4xl font-extrabold text-white">
