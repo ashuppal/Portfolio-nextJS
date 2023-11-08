@@ -1,7 +1,7 @@
-'use client';
-import React, {useTransition, useState} from 'react'
-import Image from 'next/image';
-import AboutMeTabs from './AboutMeTabs';
+"use client";
+import React, { useTransition, useState } from "react";
+import Image from "next/image";
+import AboutMeTabs from "./AboutMeTabs";
 
 const TAB_DATA = [
   {
@@ -9,8 +9,9 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <div>
-  
-        <ul className="list-disc pl-4 space-y-2"> {/* Add space between list items */}
+        <ul className="list-disc pl-4 space-y-2">
+          {" "}
+          {/* Add space between list items */}
           <li>TypeScript</li>
           <li>JavaScript</li>
           <li>C#</li>
@@ -23,7 +24,7 @@ const TAB_DATA = [
       </div>
     ),
   },
-  
+
   {
     title: "Education",
     id: "education",
@@ -38,9 +39,8 @@ const TAB_DATA = [
         <li>Bootstrap </li>
         <li>HTTP API Clients </li>
         <li>OpenAI GPT APIs </li>
-        <li>Jest  </li>
+        <li>Jest </li>
         <li>Auth0 Authentication </li>
-       
       </ul>
     ),
   },
@@ -62,8 +62,7 @@ const TAB_DATA = [
 ];
 
 function AboutMe() {
-
-  const [tab, setTab] = useState('skills');
+  const [tab, setTab] = useState("skills");
   const [ispending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -72,13 +71,40 @@ function AboutMe() {
     });
   };
   return (
-    <section className="text-white">
-    <div className="gap-8 items-center py-8 px-4 xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-16">
-      <Image src="/images/aboutme.png" width={500} height={500} alt="about me" />
-      <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-        <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-white texxt-base md:text-lg">As a seasoned Full-Stack Software Developer with a diverse background that spans finance, education, and healthcare, I bring a unique perspective to the tech industry.<br></br>  My journey in the tech world is fueled by a desire to develop solutions that make a difference, backed by a solid foundation in both front-end and back-end development, and a commitment to delivering exceptional digital experiences. <br></br>Launching SuperQuiz as its founder, I've refined my leadership and innovation capabilities, specializing in the creation of engaging, AI-assisted quizzes tailored to enhance educational experiences. This experience has sharpened my skills in product development, enabling me to intuitively align software functionalities with customer needs, and to deliver personalized solutions that resonate with users. My role has also expanded my expertise in SaaS platforms, where I've embraced the dynamic process of bringing a product to market, continually iterating based on user feedback to fine-tune features and user interface for optimal engagement and customer satisfaction.</p>
-          <div className="flex flex-row justify-start mt-8 space-x-4">
+<section className="text-white">
+      <div className="container mx-auto py-8 px-4">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-2 md:gap-4 xl:gap-6 mb-6">
+          <div className="w-full md:w-1/2 flex justify-center">
+            <div className="w-64 md:w-96">
+              <Image 
+                src="/images/hero.png" 
+                alt="aboutme" 
+                width={600} 
+                height={600} 
+                layout="responsive" 
+                objectFit="contain"
+              />
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h2 className="text-4xl font-bold mb-4">About Me</h2>
+            <p className="text-base md:text-lg mb-6">
+           My journey in the
+            tech world is fueled by a desire to develop solutions that make a
+            difference, backed by a solid foundation in both front-end and
+            back-end development, and a commitment to delivering exceptional
+            digital experiences. <br></br>By launching SuperQuiz,
+            I've refined my leadership and innovation capabilities, specializing
+            in the creation of engaging, AI-assisted quizzes tailored to enhance
+            educational experiences. This experience has sharpened my skills in
+            product development, enabling me to intuitively align software
+            functionalities with customer needs, and to deliver personalized
+            solutions that resonate with users. 
+            </p>
+          </div>
+        </div>
+        <div className="w-full flex flex-col items-center">
+          <div className="flex justify-center mt-4 mb-8 gap-6">
             <AboutMeTabs
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -98,12 +124,14 @@ function AboutMe() {
               Education
             </AboutMeTabs>
           </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+          <div className="mt-8 w-full flex justify-center">
+            <div className="w-full max-w-xl px-4"> {/* Adjust max-width as necessary */}
+              {TAB_DATA.find((t) => t.id === tab).content}
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-export default AboutMe
+}
+export default AboutMe;
