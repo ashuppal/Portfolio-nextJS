@@ -22,17 +22,19 @@ const HeroSection = () => {
             />
           </h1>
         </div>
-        {/* Buttons container with absolute positioning */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center lg:justify-start p-4">
-          <button className="bg-gradient-to-br from-cyan-500 to-lime-500 hover:bg-gray-300 text-charcoal px-6 py-3 rounded-full mr-4 shadow-lg transition duration-150 ease-in-out">
-            Hire Me
-          </button>
-          <button className="bg-gradient-to-br from-cyan-500 to-lime-500 px-1 py-1 text-charcoal rounded-full shadow-lg transition duration-150 ease-in-out">
-            <span className="block bg-charcoal hover:bg-gray-900 rounded-full px-5 py-2">
-              Download CV
-            </span>
-          </button>
-        </div>
+  
+        <div class="absolute bottom-0 left-0 right-0 flex justify-center lg:justify-start p-4 space-x-4">
+  <button class="bg-gradient-to-br from-cyan-500 to-lime-500 hover:bg-gray-300 text-charcoal rounded-full shadow-lg transition duration-150 ease-in-out whitespace-nowrap min-w-[10rem] w-full lg:w-auto">
+    Hire Me
+  </button>
+  <button class="bg-gradient-to-br from-cyan-500 to-lime-500 text-charcoal rounded-full shadow-lg transition duration-150 ease-in-out min-w-[10rem] w-full lg:w-auto">
+    <span class="block bg-charcoal hover:bg-gray-900 rounded-full px-5 py-2 whitespace-nowrap">
+      Download CV
+    </span>
+  </button>
+</div>
+
+
       </div>
     </section>
   );
