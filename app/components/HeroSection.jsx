@@ -30,6 +30,7 @@ const HeroSection = () => {
           </h1>
         </div>
   
+  
         <div className="absolute bottom-0 left-0 right-0 flex justify-center lg:justify-start p-4 space-x-4">
           <button className="bg-gradient-to-br from-cyan-500 to-lime-500 hover:bg-gray-300 text-charcoal rounded-full shadow-lg transition duration-150 ease-in-out whitespace-nowrap min-w-[10rem] w-full lg:w-auto">
             Hire Me

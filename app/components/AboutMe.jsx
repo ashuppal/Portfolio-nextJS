@@ -71,7 +71,7 @@ function AboutMe() {
     });
   };
   return (
-<section className="text-white">
+<section className="text-white" id="about">
       <div className="container mx-auto py-8 px-4">
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-2 md:gap-4 xl:gap-6 mb-6">
           <div className="w-full md:w-1/2 flex justify-center">
