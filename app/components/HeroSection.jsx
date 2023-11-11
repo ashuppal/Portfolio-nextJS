@@ -13,7 +13,6 @@ const HeroSection = () => {
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
- 
   return (
     <section className="relative grid grid-cols-1 lg:grid-cols-12 my-4">
       <div className="col-span-7">
@@ -28,26 +27,7 @@ const HeroSection = () => {
 
             </div>
 
-            <div className="flex gap-2">
-                <div className="cursor-pointer" onClick={() => openInNewTab('https://github.com/ashuppal')}>
-                  <Image
-                    alt="GitHub logo"
-                    src={GithubIcon}
-                    width={40}
-                    height={40}
-                    layout="fixed"
-                  />
-                </div>
-                <div className="cursor-pointer" onClick={() => openInNewTab('https://www.linkedin.com/in/ashwini-uppal')}>
-                  <Image
-                    alt="LinkedIn logo"
-                    src={LinkedinIcon}
-                    width={38}
-                    height={38}
-                    layout="fixed"
-                  />
-                </div>
-              </div>
+         
 
             <div className="col-span-1 flex justify-end lg:justify-start lg:ml-4">
               <Link href="#contact" className="inline-flex justify-center items-center bg-gradient-to-br from-cyan-500 to-lime-500 text-charcoal rounded-full shadow-lg transition duration-150 ease-in-out transform hover:scale-105">
