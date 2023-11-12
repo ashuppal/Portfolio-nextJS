@@ -30,43 +30,46 @@ const Navbar = () => {
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
-  return (
-    <nav className="fixed w-full border border-[#33353F] top-0 z-10 bg-[#121212] bg-opacity-100">
-    <div className="container mx-auto px-0 py-2 flex items-center justify-between">
-      <div className="flex items-center"> {/* Aligns items to the left */}
-        <Link href={"/"} className="text-2xl md:text-2xl text-white font-semibold mr-4">
-          Ashwini Uppal
-        </Link>
-        <div onClick={() => openInNewTab('https://github.com/ashuppal')} className="cursor-pointer mr-2"> 
-  <Image
-    alt="GitHub logo"
-    src={GithubIcon}
-    width={40}
-    height={40}
-    layout="fixed"
-  />
-</div>
-<div onClick={() => openInNewTab('https://www.linkedin.com/in/ashwini-uppal')} className="cursor-pointer">
-  <Image
-    alt="LinkedIn logo"
-    src={LinkedinIcon}
-    width={38}
-    height={38}
-    layout="fixed"
-  />
-</div>
 
-      </div>
-    
-      <div className="menu hidden md:flex md:items-center" id="navbar"> {/* Aligns items to the right */}
-        <ul className="flex space-x-8">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <NavLink href={link.path} title={link.title} />
-            </li>
-          ))}
-        </ul>
-      </div>
+  return (
+
+    <nav className="fixed w-full border border-[#33353F] top-0 z-10 bg-[#121212] bg-opacity-100">
+      <div className="container mx-auto px-0 py-2 flex items-center justify-between">
+        <div className="flex items-center">
+          <Link href={"/"} className="text-2xl md:text-2xl text-white font-semibold mr-4">
+            Ashwini Uppal
+          </Link>
+
+          <div onClick={() => openInNewTab('https://github.com/ashuppal')} className="cursor-pointer mr-2">
+            <Image
+              alt="GitHub logo"
+              src={GithubIcon}
+              width={40}
+              height={40}
+              layout="fixed"
+            />
+          </div>
+          <div onClick={() => openInNewTab('https://www.linkedin.com/in/ashwini-uppal')} className="cursor-pointer">
+            <Image
+              alt="LinkedIn logo"
+              src={LinkedinIcon}
+              width={38}
+              height={38}
+              layout="fixed"
+            />
+          </div>
+
+        </div>
+
+        <div className="menu hidden md:flex md:items-center" id="navbar">
+          <ul className="flex space-x-8">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <NavLink href={link.path} title={link.title} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
     </nav>
