@@ -14,11 +14,12 @@ const Email = () => {
     <section  id="contact" className="grid md:grid-cols-2 my-12 md:my-16 py-24 gap-4 relative">
       <div className="absolute w-80 h-80 z-0 "></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white myåç-2">Let's Connect</h5>
+        <h5 className="text-xl font-bold text-white myåç-2">Let's Connect</h5><br></br>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I'm currently looking for new opportunities, my inbox is always open.
-          Whether you have a question or just want to say hi, I'll try my best
-          to get back to you!
+      
+I am always open to exploring new opportunities and partnerships. If you have a project in mind, a job opportunity, or just wish to discuss an idea, feel free to reach out.
+<br></br>
+I'm excited about the possibility of working together and discovering what we can achieve.
         </p>
         <div className="flex gap-2">
           <div className="cursor-pointer" onClick={() => openInNewTab('https://github.com/ashuppal')}>
