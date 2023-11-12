@@ -1,10 +1,13 @@
+'use client';
 import React from 'react';
-import Image from "next/image";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
-
 
 const Cards = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+  // Function to open URLs in a new tab
+  const openInNewTab = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div>
       <div className="bg-[#181818] rounded-b-xl py-6 px-4 text-white">
@@ -13,31 +16,26 @@ const Cards = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
       </div>
       <div
         className="group rounded-t-xl h-52 md:h-72 bg-center relative overflow-hidden"
-        src={imgUrl}
-        alt={title}
-        width={300}
-        height={200}
-        style={{ background: `url(${imgUrl}) no-repeat center center `, backgroundSize: "contain" }}
+        style={{ background: `url(${imgUrl}) no-repeat center center`, backgroundSize: "contain" }}
       >
         <div className="overlay absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 items-center justify-center">
-          <Link
-               href={previewUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white mr-4 group/link"
+          {/* Use div and handle click event */}
+          <div
+            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white mr-4 cursor-pointer"
+            onClick={() => openInNewTab(previewUrl)}
           >
-            <EyeIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-          </Link>
-          <Link
-            href={gitUrl}
-       
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+            <EyeIcon className="h-10 w-10 text-[#ADB7BE] hover:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+          </div>
+          <div
+            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white cursor-pointer"
+            onClick={() => openInNewTab(gitUrl)}
           >
-            <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-          </Link>
+            <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] hover:text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+          </div>
         </div>
       </div>
-
     </div>
   );
 }
 
-export default Cards
+export default Cards;

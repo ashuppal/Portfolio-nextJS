@@ -1,5 +1,7 @@
-import React from 'react';
+'use client';
+import React, {useState,useRef} from 'react';
 import Cards from './Cards';
+import {motion, useInView} from 'framer-motion';
 
 
 const projectsData = [
@@ -42,12 +44,17 @@ const projectsData = [
 
 ];
 function Projects() {
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
+
   return (
-    <>
+    <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
       <div> {projectsData.map((project) =>
+      
        <Cards
         key={project.id} 
         title={project.title}
@@ -57,7 +64,7 @@ function Projects() {
          previewUrl={project.previewUrl}
           />)}
       </div>
-    </>
+    </section>
 
   )
 }
