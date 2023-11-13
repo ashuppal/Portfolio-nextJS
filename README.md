@@ -17,9 +17,6 @@ Open a terminal window and run the following command to clone the repository:
 
 git clone https://github.com/ashuppal/Portfolio-nextJS.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
 Create a .env file add the following variable:
 RESEND_API_KEY=YOUR_API_KEY
 
