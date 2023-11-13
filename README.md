@@ -44,7 +44,7 @@ Open http://localhost:3000 with your browser to see the result.
 
 ![image](./public/images/screenshot.jpg)
 
-![image](./public/images/contact.jpg)
+![image](./public/images/contact.JPG)
 
 
 
