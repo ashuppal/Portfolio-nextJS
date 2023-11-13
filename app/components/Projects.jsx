@@ -11,7 +11,7 @@ const projectsData = [
     id: 1,
     image: "/images/superQuiz.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/ashuppal/SuperQuiz",
     previewUrl: "https://getsuperquiz.com/"
   },
   {
@@ -32,15 +32,15 @@ const projectsData = [
     gitUrl: "https://github.com/PolishedProfiles",
     previewUrl: "https://polished-profiles.netlify.app/"
   },
-  {
-    id: 4,
-    title: "Adventure Game",
-    description: "Play an Adventure Game",
-    image: "/images/superQuiz.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/"
-  },
+  // {
+  //   id: 4,
+  //   title: "Adventure Game",
+  //   description: "Play an Adventure Game",
+  //   image: "/images/superQuiz.png",
+  //   tag: ["All", "Mobile"],
+  //   gitUrl: "/",
+  //   previewUrl: "/"
+  // },
 
 ];
 function Projects() {
