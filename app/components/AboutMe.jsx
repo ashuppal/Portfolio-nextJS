@@ -94,7 +94,7 @@ function AboutMe() {
               difference, backed by a solid foundation in both front-end and
               back-end development, and a commitment to delivering exceptional
               digital experiences. <br></br>By launching SuperQuiz,
-              I've refined my leadership and innovation capabilities, specializing
+              I have refined my leadership and innovation capabilities, specializing
               in the creation of engaging, AI-assisted quizzes tailored to enhance
               educational experiences. This experience has sharpened my skills in
               product development, enabling me to intuitively align software
