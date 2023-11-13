@@ -1,4 +1,5 @@
-"use client"; import React, { useState } from "react";
+"use client"; 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -26,12 +27,18 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
+  const [isContactActive, setIsContactActive] = useState(false);
+
+  useEffect(() => {
+    setIsContactActive(window.location.hash === "#contact");
+  }, []);
+
   const openInNewTab = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   };
 
-  // Check if the "Contact" link is active
-  const isContactActive = window.location.hash === "#contact";
 
   return (
     <nav className="fixed w-full border border-[#33353F] top-0 z-10 bg-[#121212] bg-opacity-100">
